@@ -32,3 +32,31 @@ let add:AddFunction = (x,y)=>{return x+y};
 console.log(add(5,7));
 
 
+type ID = string | number;
+// let userId:ID = 101;
+let userId:ID= "rohit";
+
+console.log(userId);
+
+
+type Person = {
+    username:string
+}
+
+type Emp = {
+    salary :number
+}
+
+type Staff = Person & Emp   // intersection
+
+let worker:Staff = {
+    username : "rohit",
+    salary :40000
+}
+
+console.log(worker);
+
+
+
+
+
