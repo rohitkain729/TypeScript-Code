@@ -1,16 +1,29 @@
-// tuples
-let user:[string,number] = ["rohit",34];
-console.log(user);
+let statusCode = "Success";
 
-let numbersData:number[] = [1,2,3,4];
-let empData:[string,number]=["rohit",34000];
-let [username,salary] = empData;
-console.log(username);
-console.log(salary);
-
-
-function getUser():[string,number]{
-    return ["rohit",343000]
+enum Direction{
+    up="East",
+    down="North",
+    right="West",
+    left ="South"
 }
 
-console.log((getUser()));
+enum StatusCode {
+    Success="200",
+    NotFOund="404",
+    ServerError="500"
+}
+
+enum PaymentStatus{
+    pending="PENDING",
+    success="OK",
+    failed="Fail"
+}
+
+function checkpayment(status:PaymentStatus){
+ console.log(status)
+}
+checkpayment(PaymentStatus.pending);
+
+
+console.log(Direction.left);
+console.log(StatusCode.Success);
