@@ -1,62 +1,24 @@
-type Username=string;
-type age=number;
+// union types
+// multiple handler
+let id: string|number;  // union
+id=101;
+id="rohit";
+// id=true; // not valid
+console.log(id);
 
-let myname:Username = "rohit";
-let myage:age = 57;
-
-console.log(myname);
-console.log(myage);
-
-
-
-// let users :{
-//     username:string,
-//     age:number
-// }
-
-type Users = {
-     username:string,
-    age:number
+function printId(id:string|number){
+console.log(id);
 }
+printId(100);
+printId("preety");
 
-let user2:Users={username:"rohit",age:44};
-console.log(user2);
-
-type AddFunction = (
-    a:number,
-    b:number
-) =>number;
-
-let add:AddFunction = (x,y)=>{return x+y};
-
-console.log(add(5,7));
-
-
-type ID = string | number;
-// let userId:ID = 101;
-let userId:ID= "rohit";
-
-console.log(userId);
-
-
-type Person = {
-    username:string
+//type narrowing
+function printData(data: string|number){
+    if(typeof data === "string"){
+        console.log(data.toUpperCase());
+    }else{
+        console.log(data);
+    }
 }
-
-type Emp = {
-    salary :number
-}
-
-type Staff = Person & Emp   // intersection
-
-let worker:Staff = {
-    username : "rohit",
-    salary :40000
-}
-
-console.log(worker);
-
-
-
-
-
+printData("rohit");
+printData(44);
