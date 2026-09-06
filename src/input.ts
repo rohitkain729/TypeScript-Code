@@ -1,29 +1,34 @@
-let statusCode = "Success";
+type Username=string;
+type age=number;
 
-enum Direction{
-    up="East",
-    down="North",
-    right="West",
-    left ="South"
+let myname:Username = "rohit";
+let myage:age = 57;
+
+console.log(myname);
+console.log(myage);
+
+
+
+// let users :{
+//     username:string,
+//     age:number
+// }
+
+type Users = {
+     username:string,
+    age:number
 }
 
-enum StatusCode {
-    Success="200",
-    NotFOund="404",
-    ServerError="500"
-}
+let user2:Users={username:"rohit",age:44};
+console.log(user2);
 
-enum PaymentStatus{
-    pending="PENDING",
-    success="OK",
-    failed="Fail"
-}
+type AddFunction = (
+    a:number,
+    b:number
+) =>number;
 
-function checkpayment(status:PaymentStatus){
- console.log(status)
-}
-checkpayment(PaymentStatus.pending);
+let add:AddFunction = (x,y)=>{return x+y};
+
+console.log(add(5,7));
 
 
-console.log(Direction.left);
-console.log(StatusCode.Success);
