@@ -1,30 +1,53 @@
-// .... spread or rest
+let add:(a:number,
+    b:number,) => number
 
-// rest paramater
-function addNumber(...num:number[]){
-    console.log(num);   
+
+function greet(username:string):void{
+console.log(username);
+ }  
+ greet("rohit");
+
+ function add2(a:number,b:number):number{
+    return a+b;
+ }
+ console.log(add2(2,5));
+
+ function multiple(a:number,b:number):number{
+    return a*b;
+ }
+console.log(multiple(2,4));
+
+let  subtract :(x:number,y:number)=>number;
+
+subtract=(a,b)=>{
+    return a-b;
 }
-addNumber(10,30,30.22,45);
+console.log(subtract(20,4));
 
-function  totalPrice(name?:string,
-    ...prices:number[]
-){
-     return `${prices.reduce((sum,price)=>{return sum+price},0)} ${name}`
+
+// call back
+
+function processData(
+    callback:(
+        value:number
+    ) =>void
+   )
+    {
+        callback(100)
+    }
+processData((num)=>{console.log(num);
+})
+
+function Calculate( a:number,
+    b:number,
+    operator:(x:number,y:number) =>number){
+    return operator (a,b)
 }
-console.log(totalPrice("amit",10,202,303));
 
-// spread operator
-let num = [1,3,4,5];
-let num2 = [...num,2,4];
-console.log(num2);
-
-// spread in object
-let user = {
-    name:"rohit",
-    age:23
-}
-let updateUSer={...user,age:35,country:"india"};
-console.log(updateUSer);
+let result = Calculate (
+    10,20,(x,y)=>x+y
+)
+console.log(result);
 
 
 
@@ -34,3 +57,25 @@ console.log(updateUSer);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
