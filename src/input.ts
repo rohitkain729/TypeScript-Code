@@ -1,16 +1,23 @@
-//Object in typescript
-
-let user2:{
+interface Employee
+{
+    id:number,
     username:string,
-    age:number
+    salary:number
 }
 
 
-user2 = {
-    username:"ravi",
-    age:10
+let emplyee : Employee = {
+    id:1,
+    username:"rohit",
+    salary:320023
 }
-user2.age=34;
-console.log(user2);
+
+let emplyee2 : Employee = {
+    id:133,
+    username:"Kohit",
+    salary:32008823
+}
+console.log(emplyee2.salary);
+console.log(emplyee);
 
 
