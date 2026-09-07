@@ -1,11 +1,13 @@
-const addNumber = (a:number,b:number):number=>{return a+b};
+// paramater ? : type
 
-const sumdata = addNumber(2,3);
+function welcome(
+    age?:number,
+    username:string = "rohit",
+    country?:string
+){
+    console.log(`hi bro ${username} ${age} ${country}`);
+}
 
-console.log(sumdata);
+welcome(56,"ashok","india");
 
 
-const square = (a:number):number=>{return a*a};
-
-const res =square(2);
-console.log(res);
