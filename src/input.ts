@@ -1,23 +1,16 @@
-//  arrow function
+//Object in typescript
 
-
-const greet =(name?:string):string=>{
-    return `${name}`;
+let user2:{
+    username:string,
+    age:number
 }
-console.log(greet("rohit"));
-
-const square = (a:number)=>a*a;
-
-console.log(square(3));
 
 
-let num = [1,2,3];
+user2 = {
+    username:"ravi",
+    age:10
+}
+user2.age=34;
+console.log(user2);
 
- let newVal=num.map((val)=>{ return val*2});
 
- console.log(newVal);
- 
- let newFil=num.filter((val)=>{return val > 2});
-
- console.log(newFil);
- 
