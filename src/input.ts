@@ -1,34 +1,23 @@
-//  function overloading
+//  arrow function
 
-function add(
-    a:any,
-    b:any
-):number{
-    return a+b;
+
+const greet =(name?:string):string=>{
+    return `${name}`;
 }
+console.log(greet("rohit"));
+
+const square = (a:number)=>a*a;
+
+console.log(square(3));
 
 
-// function show(
-//     value:string
-// ):void;
+let num = [1,2,3];
 
+ let newVal=num.map((val)=>{ return val*2});
 
-// function show(
-//     value:any
-// ):void;
+ console.log(newVal);
+ 
+ let newFil=num.filter((val)=>{return val > 2});
 
-// function search(id:string):string{
-// }
-// function search(username:string):string{
-// }
-
-//  practical use
-function search(value:any):string{
-  if(typeof value === "string"){
-        return `username: ${value}`
-  }else{
-    return `id: ${value}`
-  }
-}
-
-console.log(search(343));
+ console.log(newFil);
+ 
