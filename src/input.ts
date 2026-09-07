@@ -1,36 +1,21 @@
-//  interface with function
+//  type vs interface
 
-interface Multiply{
-   (a?:number,b?:number):number
+type User = {
+    username:string,
+    email:string
 }
-
-let multpFn :Multiply=(a,b)=>{return a*b};
-
-console.log(multpFn(2,4));
-interface Greeting {
-    (username:string):string
+let user1:User = {
+    username:"rohit",
+    email:"rohit@gmail.com"
 }
-let greeFn:Greeting = (username)=>{return username };
-console.log(greeFn("hi"));
-
-//  resuable function contracts
-
-interface Calcualor{
-    (a:number,b:number) : number
+let user2:User = {
+    username:"ravi",
+    email:"ravi@gmail.com"
 }
+console.log(user1.username);
+console.log(user2.username);
 
-let addFn:Calcualor=(a,b)=>{return a+b};
-let mulFn:Calcualor=(a,b)=>{return a*b};
-let divFn:Calcualor=(a,b)=>{return a/b};
-
-
-console.log(addFn(2,5));
-console.log(mulFn(2,5));
-console.log(divFn(20,5));
-
-
-
-
+type ID = string|number;
 
 
 
