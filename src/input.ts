@@ -1,81 +1,44 @@
-let add:(a:number,
-    b:number,) => number
+// type FunctionNames={
+//     (
+//         parameter:type
+//     ):Return Type
+// }
 
-
-function greet(username:string):void{
-console.log(username);
- }  
- greet("rohit");
-
- function add2(a:number,b:number):number{
-    return a+b;
- }
- console.log(add2(2,5));
-
- function multiple(a:number,b:number):number{
-    return a*b;
- }
-console.log(multiple(2,4));
-
-let  subtract :(x:number,y:number)=>number;
-
-subtract=(a,b)=>{
-    return a-b;
-}
-console.log(subtract(20,4));
-
-
-// call back
-
-function processData(
-    callback:(
-        value:number
-    ) =>void
-   )
-    {
-        callback(100)
-    }
-processData((num)=>{console.log(num);
-})
-
-function Calculate( a:number,
-    b:number,
-    operator:(x:number,y:number) =>number){
-    return operator (a,b)
+type Multiply = {
+    (
+        x:number,
+        y:number
+    ): number;
 }
 
-let result = Calculate (
-    10,20,(x,y)=>x+y
-)
-console.log(result);
+let multiplyNUmber:Multiply = (x,y) => x*y;
+
+console.log(multiplyNUmber(2,6));
+
+
+// by interface 
+interface Multiple2  {
+    (
+        x:number,
+        y:number
+    ):number
+}
+let InteMultipl:Multiple2= (x,y)=>{return x*y};
+
+console.log(InteMultipl(3,7));
+
+
+interface LoginFun{
+    (email:string,
+password:string
+    ):boolean
+}
+
+let Login:LoginFun=(email,password)=>{return password === "123" ? true:false};
+
+console.log(Login("rkrfo@gmail.com","123"));
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
