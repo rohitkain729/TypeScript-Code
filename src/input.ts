@@ -1,44 +1,34 @@
-// type FunctionNames={
-//     (
-//         parameter:type
-//     ):Return Type
+//  function overloading
+
+function add(
+    a:any,
+    b:any
+):number{
+    return a+b;
+}
+
+
+// function show(
+//     value:string
+// ):void;
+
+
+// function show(
+//     value:any
+// ):void;
+
+// function search(id:string):string{
+// }
+// function search(username:string):string{
 // }
 
-type Multiply = {
-    (
-        x:number,
-        y:number
-    ): number;
+//  practical use
+function search(value:any):string{
+  if(typeof value === "string"){
+        return `username: ${value}`
+  }else{
+    return `id: ${value}`
+  }
 }
 
-let multiplyNUmber:Multiply = (x,y) => x*y;
-
-console.log(multiplyNUmber(2,6));
-
-
-// by interface 
-interface Multiple2  {
-    (
-        x:number,
-        y:number
-    ):number
-}
-let InteMultipl:Multiple2= (x,y)=>{return x*y};
-
-console.log(InteMultipl(3,7));
-
-
-interface LoginFun{
-    (email:string,
-password:string
-    ):boolean
-}
-
-let Login:LoginFun=(email,password)=>{return password === "123" ? true:false};
-
-console.log(Login("rkrfo@gmail.com","123"));
-
-
-
-
-
+console.log(search(343));
