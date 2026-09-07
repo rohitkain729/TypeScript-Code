@@ -1,8 +1,8 @@
 interface Employee
 {
     id:number,
-    username:string,
-    salary:number
+    username?:string,
+    salary?:number
 }
 
 
