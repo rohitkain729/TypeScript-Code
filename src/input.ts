@@ -1,51 +1,72 @@
-// record type
-// Record<keys,valueType>
+//  generic in typescript
 
-type UserRole= {
-    admin:string,
-    user:string,
-    guest:string
+function printString(value:string){
+    return value;
+}
+function printNum(value:string){
+    return value;
 }
 
-type UserRole2 = Record<
-  "admin"|"user"|"guest"
-,string>
+// generic
 
-const roles:UserRole = {
-    admin:"Full Access",
-    user:"Limited Access",
-    guest:"Read only"
+function printValue<T>(value:T):T{
+    return value;
 }
-console.log(roles);
 
-type StudentMarks = Record<string,number>;
+console.log(printValue("rohit"));
+console.log(printValue(122));
+console.log(printValue(true));
 
-const marks : StudentMarks = {
-    Mohit:200,
-    rohit:389,
-    amit:289
+
+function getData<T>(data:T):T{
+ return data;
 }
-console.log(marks);
 
-type UserType = {
+let usname = getData<string>("rohit");
+let usage = getData<string>(43);
+
+console.log(usname);
+console.log(usage);
+
+
+
+function getFirstElement<T>(arr:T[]):T{
+ return arr[0];
+}
+
+console.log(getFirstElement(["react","node js","ts","angular"]));
+
+interface ApiResponse<T>{
+    success:boolean,
+    data:T
+}
+
+const Response1 :ApiResponse<string> ={
+    success:true,
+    data:"user found"
+}
+
+console.log(Response1);
+
+
+const Response2 :ApiResponse<{
     name:string,
     age:number
-}
-
-type Users = Record<string,UserType>
-
-const user1:Users = {
-     "user1":{
+}> ={
+    success:true,
+    data:{
         name:"rohit",
-        age:20
-     },
-     "user2" :{
-        name:"ashok",
-        age:32
-     }
+        age:23
+    }
 }
 
-console.log(user1);
+console.log(Response2);
+
+
+
+
+
+
 
 
 
