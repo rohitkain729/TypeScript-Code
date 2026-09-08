@@ -1,60 +1,36 @@
-// //  Inheritance
+// ABSTRACT CLASSES
 
-// class Animal {
-//     name:string
-//   constructor(name:string){
-//      this.name =name;
-//   }
-//   eat(){
-//     console.log(`${this.name} i am eating `);
-//   }
-// }
-
-// class Dog extends Animal{
-//     bark(){
-//         console.log(`woff woff`);
-//     }
-// }
-
-// const dog = new Dog("tommy");
-// dog.eat();
-// dog.bark();
-
-// class Animal{
-//     constructor(public name:string){
+// abstract class  Animal {
+    
+//     abstract makeSound():void;
+    
+//     eat(){
+//         console.log("animal eating");
+        
 //     }
 // }
 // class Dog extends Animal{
-//     constructor(name:string,public breed:string){
-//         super(name);
+//     makeSound(): void {
+//         console.log("woof woof");
+        
 //     }
 // }
-// let dog = new Dog("tommy","breed:labr dor");
-//  console.log(dog);
- 
-class Emp {
-    protected salary:number;
-    constructor(
-        salary:number
-    ){
-       this.salary =salary;
-    }
+// // const an = new Animal();
+// const dog = new Dog();
+// dog.makeSound();
+
+abstract class Emp{
+    constructor(){}
+    abstract CalcSal():string;
 }
 
 class Dev extends Emp{
-    showSal(){
-        console.log(this.salary);
-        
+    CalcSal(): string {
+        return `salary is 50000`
     }
 }
-
-let deve = new Dev(4000);
-deve.showSal();
-
-
-
-
-
+const dev = new Dev();
+console.log(dev.CalcSal());
 
 
 
