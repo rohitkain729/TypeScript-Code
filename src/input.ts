@@ -1,37 +1,39 @@
-// ABSTRACT CLASSES
+//  OOPS : Static properties and methods
 
-// abstract class  Animal {
-    
-//     abstract makeSound():void;
-    
-//     eat(){
-//         console.log("animal eating");
-        
-//     }
+// class MathUtils{
+//     static appName= "Calculator";
 // }
-// class Dog extends Animal{
-//     makeSound(): void {
-//         console.log("woof woof");
-        
-//     }
-// }
-// // const an = new Animal();
-// const dog = new Dog();
-// dog.makeSound();
 
-abstract class Emp{
-    constructor(){}
-    abstract CalcSal():string;
+// console.log(MathUtils.appName);
+
+class Company{
+   static compnanyName = "ROhit Decodes";
 }
 
-class Dev extends Emp{
-    CalcSal(): string {
-        return `salary is 50000`
-    }
-}
-const dev = new Dev();
-console.log(dev.CalcSal());
+// const comp = new Company();
+console.log(Company.compnanyName);
 
+class MathUtils{
+  static add(
+    a:number,
+    b:number
+  )  {
+    return a+b;
+  }
+}
+console.log(MathUtils.add(2,3));
+
+class Users{
+    static appName="codeing TS";
+    name:string;
+
+constructor(name:string){
+    this.name=name;
+}}
+
+const user = new Users("rohit");
+console.log(user);
+console.log(Users.appName);
 
 
 
