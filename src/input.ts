@@ -63,6 +63,38 @@ const Response2 :ApiResponse<{
 console.log(Response2);
 
 
+function printData3<T>(data:T){
+    return data;
+}
+
+console.log(printData3([1,2,343]));
+
+function getLength<T extends{length:number}>(item :T){
+    return item.length;
+}
+
+console.log(getLength([1,2,3,4,]));
+
+interface HasId{
+    id:number
+}
+
+function printId<T extends HasId>(obj:T){
+    console.log(obj.id);
+    
+}
+printId({id:101,name:"rohit"});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
