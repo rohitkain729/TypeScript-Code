@@ -1,41 +1,38 @@
-class User{
-    name="rohit"
-}
-const user = new User();
-console.log(user);
+//  ACCESS MODIFIERS
 
-class User2{
-    name:string;      
-    age:number
-    constructor(name:string,age:number){
-      this.name =name;
-      this.age = age;
+//  private
+// class User{
+//     private name:string
+
+//    constructor(name:string){
+//     this.name =name;
+//    }
+
+//    public getName(){
+//      return this.name;
+//    }
+
+// }
+
+// console.log(new User("rohit").name);
+// console.log(new User("rohit").getName());
+
+//  protected
+
+class Emp{
+    protected salary:number;
+
+    constructor(sal:number){
+        this.salary=sal;
     }
 }
-const u2 = new User2("rohit",23);
-const u3 = new User2("IIhit",53);
-console.log(u2);
-console.log(u3);
 
-
-class User3{
-    constructor(
-        public name:string,
-        public age:number
-    ){}
+class Develp extends Emp{
+    showSal(){
+        console.log(this.salary);
+    }
 }
 
-const u4 = new User3("rohit",83);
-
-console.log(u4);
-
-
-
-
-
-
-
-
-
+new Develp(4000).showSal();
 
 
