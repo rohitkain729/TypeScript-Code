@@ -1,40 +1,43 @@
-// Mapped type
+//  conditional type
+// type Result<T> = T extends string ?string :number;
 
-type user = {
-    name:string,
-    age:number
+// type CheckString<T> = 
+//   T extends string ? "yes":"no"
+//   type Result1 =CheckString<string>
+//   type Result2 =CheckString<number>
+//   const result : Result1 = "No";
+//   console.log(result);
+
+// type IsAdmin<T> = 
+// T extends "admin" ? true :false;
+
+// type User1 = IsAdmin<"admin">
+// type User2 = IsAdmin<"user">
+
+
+interface Admin {
+    permission:string[]
+}
+interface Emp {
+    department:string
+}
+type UserType<T>= 
+T extends Admin ? "Admin":"Emp User";
+
+type result1 =UserType<Admin>;
+type result2 =UserType<Emp>;
+
+function getUser(){
+    return {
+        name:"rohit",
+        age:30
+    }
 }
 
-// type OptionalUser = {
-//     [key in keyof user]?:user[key]
-// }
+type GetUserType<T>= 
+T extends (...args:any[]) =>infer R?R:never 
 
-// const user:OptionalUser={
-//     name:"rohit",
-//     age:23
-// }
-
-// type ReadonlyUser = {
-//     readonly [key in keyof user] : user[key]
-// }
-
-// let user2 : ReadonlyUser = {
-//     name:"rohit",
-//     age:34
-// }
-
-// user2.name = "preeti"; // cannot be changed
-
-
-type BooleanUser = {
-    [key in keyof user] : boolean
-}
-
-const userStatus:BooleanUser ={
-    name :true,
-    age:false
-}
-console.log(userStatus);
+type User  = GetUserType<typeof getUser>;
 
 
 
@@ -43,8 +46,5 @@ console.log(userStatus);
 
 
 
-
-
-
-
-
+  
+  
