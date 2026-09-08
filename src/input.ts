@@ -1,52 +1,61 @@
-//  Utility type (partial,pick,omit)
-// partial
-// type User = {
-//     id:number,
-//     name:string,
-//     email:string,
-//     age:number
-// }
-// type UpdatedUser = Partial<User>
+// record type
+// Record<keys,valueType>
 
-// const user:UpdatedUser = {
-//     name:"rohit"
-// }
-// console.log(user);
+type UserRole= {
+    admin:string,
+    user:string,
+    guest:string
+}
 
-// pick
-// type User = {
-//     id:number,
-//     name:string,
-//     email:string,
-//     age:number
-// }
+type UserRole2 = Record<
+  "admin"|"user"|"guest"
+,string>
 
-// type UserBasicInfo = Pick<User,"name"|"email">
+const roles:UserRole = {
+    admin:"Full Access",
+    user:"Limited Access",
+    guest:"Read only"
+}
+console.log(roles);
 
-// const user:UserBasicInfo = {
-//     name:"rohit",
-//     email:"rohit@gmal.com"
-// }
-// console.log(user);
+type StudentMarks = Record<string,number>;
 
-// Omit
+const marks : StudentMarks = {
+    Mohit:200,
+    rohit:389,
+    amit:289
+}
+console.log(marks);
 
-type User = {
-    id:number,
+type UserType = {
     name:string,
-    email:string,
     age:number
 }
 
-type PublicUser =Omit<User,"age">;
+type Users = Record<string,UserType>
 
-let user2:PublicUser = {
-    id:1,
-    name:"rohit",
-    email:"rohti@fmail.com"
+const user1:Users = {
+     "user1":{
+        name:"rohit",
+        age:20
+     },
+     "user2" :{
+        name:"ashok",
+        age:32
+     }
 }
 
-console.log(user2);
+console.log(user1);
+
+
+
+
+
+
+
+
+
+
 
 
 
