@@ -1,38 +1,61 @@
-//  ACCESS MODIFIERS
+// //  Inheritance
 
-//  private
-// class User{
-//     private name:string
-
-//    constructor(name:string){
-//     this.name =name;
-//    }
-
-//    public getName(){
-//      return this.name;
-//    }
-
+// class Animal {
+//     name:string
+//   constructor(name:string){
+//      this.name =name;
+//   }
+//   eat(){
+//     console.log(`${this.name} i am eating `);
+//   }
 // }
 
-// console.log(new User("rohit").name);
-// console.log(new User("rohit").getName());
+// class Dog extends Animal{
+//     bark(){
+//         console.log(`woff woff`);
+//     }
+// }
 
-//  protected
+// const dog = new Dog("tommy");
+// dog.eat();
+// dog.bark();
 
-class Emp{
+// class Animal{
+//     constructor(public name:string){
+//     }
+// }
+// class Dog extends Animal{
+//     constructor(name:string,public breed:string){
+//         super(name);
+//     }
+// }
+// let dog = new Dog("tommy","breed:labr dor");
+//  console.log(dog);
+ 
+class Emp {
     protected salary:number;
-
-    constructor(sal:number){
-        this.salary=sal;
+    constructor(
+        salary:number
+    ){
+       this.salary =salary;
     }
 }
 
-class Develp extends Emp{
+class Dev extends Emp{
     showSal(){
         console.log(this.salary);
+        
     }
 }
 
-new Develp(4000).showSal();
+let deve = new Dev(4000);
+deve.showSal();
+
+
+
+
+
+
+
 
 
