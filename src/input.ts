@@ -1,107 +1,33 @@
-//  generic in typescript
-
-function printString(value:string){
-    return value;
+class User{
+    name="rohit"
 }
-function printNum(value:string){
-    return value;
-}
+const user = new User();
+console.log(user);
 
-// generic
-
-function printValue<T>(value:T):T{
-    return value;
-}
-
-console.log(printValue("rohit"));
-console.log(printValue(122));
-console.log(printValue(true));
-
-
-function getData<T>(data:T):T{
- return data;
-}
-
-let usname = getData<string>("rohit");
-let usage = getData<string>(43);
-
-console.log(usname);
-console.log(usage);
-
-
-
-function getFirstElement<T>(arr:T[]):T{
- return arr[0];
-}
-
-console.log(getFirstElement(["react","node js","ts","angular"]));
-
-interface ApiResponse<T>{
-    success:boolean,
-    data:T
-}
-
-const Response1 :ApiResponse<string> ={
-    success:true,
-    data:"user found"
-}
-
-console.log(Response1);
-
-
-const Response2 :ApiResponse<{
-    name:string,
+class User2{
+    name:string;      
     age:number
-}> ={
-    success:true,
-    data:{
-        name:"rohit",
-        age:23
+    constructor(name:string,age:number){
+      this.name =name;
+      this.age = age;
     }
 }
+const u2 = new User2("rohit",23);
+const u3 = new User2("IIhit",53);
+console.log(u2);
+console.log(u3);
 
-console.log(Response2);
 
-
-function printData3<T>(data:T){
-    return data;
+class User3{
+    constructor(
+        public name:string,
+        public age:number
+    ){}
 }
 
-console.log(printData3([1,2,343]));
+const u4 = new User3("rohit",83);
 
-function getLength<T extends{length:number}>(item :T){
-    return item.length;
-}
-
-console.log(getLength([1,2,3,4,]));
-
-interface HasId{
-    id:number
-}
-
-function printId<T extends HasId>(obj:T){
-    console.log(obj.id);
-    
-}
-printId({id:101,name:"rohit"});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(u4);
 
 
 
