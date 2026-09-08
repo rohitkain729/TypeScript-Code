@@ -1,50 +1,53 @@
-//  conditional type
-// type Result<T> = T extends string ?string :number;
+//  Utility type (partial,pick,omit)
+// partial
+// type User = {
+//     id:number,
+//     name:string,
+//     email:string,
+//     age:number
+// }
+// type UpdatedUser = Partial<User>
 
-// type CheckString<T> = 
-//   T extends string ? "yes":"no"
-//   type Result1 =CheckString<string>
-//   type Result2 =CheckString<number>
-//   const result : Result1 = "No";
-//   console.log(result);
+// const user:UpdatedUser = {
+//     name:"rohit"
+// }
+// console.log(user);
 
-// type IsAdmin<T> = 
-// T extends "admin" ? true :false;
+// pick
+// type User = {
+//     id:number,
+//     name:string,
+//     email:string,
+//     age:number
+// }
 
-// type User1 = IsAdmin<"admin">
-// type User2 = IsAdmin<"user">
+// type UserBasicInfo = Pick<User,"name"|"email">
 
+// const user:UserBasicInfo = {
+//     name:"rohit",
+//     email:"rohit@gmal.com"
+// }
+// console.log(user);
 
-interface Admin {
-    permission:string[]
+// Omit
+
+type User = {
+    id:number,
+    name:string,
+    email:string,
+    age:number
 }
-interface Emp {
-    department:string
-}
-type UserType<T>= 
-T extends Admin ? "Admin":"Emp User";
 
-type result1 =UserType<Admin>;
-type result2 =UserType<Emp>;
+type PublicUser =Omit<User,"age">;
 
-function getUser(){
-    return {
-        name:"rohit",
-        age:30
-    }
+let user2:PublicUser = {
+    id:1,
+    name:"rohit",
+    email:"rohti@fmail.com"
 }
 
-type GetUserType<T>= 
-T extends (...args:any[]) =>infer R?R:never 
-
-type User  = GetUserType<typeof getUser>;
+console.log(user2);
 
 
 
 
-
-
-
-
-  
-  
